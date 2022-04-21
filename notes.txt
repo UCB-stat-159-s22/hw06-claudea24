@@ -1,0 +1,11 @@
+Notes
+
+Packaging installation options:
+1. Packaging all ligotools in 1 folder:
+	- move ligotools, ligotools.egg-info. LICENSE, setup.py, setup.cfg, pyproj.toml to folder `ligotools`
+	- add README.md
+	- type: pip install . --> inside conda activate ligo
+	- hurdles: don't know how to add it to environment.yml -> so virtual env don't have ligotools when first set up
+
+2. write all setup.cfg, setup.py, and pyproj.py, but don't use the installation to run index.ipynb (so just have everything outside).
+	- this works out on binder, but this means we don't need to use pip install . to run ligotools, but have all the setup needed.
