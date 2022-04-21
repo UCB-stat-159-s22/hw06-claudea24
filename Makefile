@@ -1,6 +1,6 @@
 FIGURE_FILES = $(wildcard figures/*.png)
 AUDIO_FILES = $(wildcard audio/*.wav)
-CSV_FILES = $(wildcard *.csv)
+CSV_FILES = $(wildcard data/*.csv)
 
 # Run Jupyter Notebook to obtain the figures and table
 .PHONY : all
