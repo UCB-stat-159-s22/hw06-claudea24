@@ -5,6 +5,8 @@ Sites:
 2. put everything in this folder, like what we have now
 
 Github Action & Pages, HOW??
+1. need to create public github repo again? cause this one is already public
+2. how to do it?
 
 test:
 need to write test for utils.py
