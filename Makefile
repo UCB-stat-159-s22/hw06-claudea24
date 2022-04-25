@@ -14,14 +14,25 @@ clean :
 	rm -f $(AUDIO_FILES)
 	rm -f $(CSV_FILES)
 
-
 #Create Environment
 .PHONY: env
 env:
 	mamba env create -f environment.yml -p ~/envs/ligo
 	bash -ic 'conda activate ligo;python -m ipykernel install --user --name ligo --display-name "IPython - ligo"'
 
-	
+# build the jupyter-book on local machine
+.PHONY: html
+html:
+	jupyter-book build .
+
+# build the jupyter-book in the hub
+.PHONY: html-hub
+html-hub:
+	jupyter-book config sphinx .
+	sphinx-build  . _build/html -D html_baseurl=${JUPYTERHUB_SERVICE_PREFIX}/proxy/absolute/8000
+	cd _build/html
+	python -m http.server
+
 .PHONY : variables
 variables :
 	@echo FIGURE_FILES: $(FIGURE_FILES)
